@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-25CDK8QPNC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-25CDK8QPNC');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH | Cuidado Humano - Servicio, Integridad & Perseverancia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚕</text></svg>">
+    <style>
+        :root {
+            --primary-color: #38b6ff;
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --light-text: #777777;
+            --alert-bar: #f8f9fa;
+            --alert-text: #333333;
+            --emergency-red: #dc3545;
+            --uv-low: #28a745;
+            --uv-moderate: #ffc107;
+            --uv-high: #fd7e14;
+            --uv-very-high: #dc3545;
+            --uv-extreme: #6f42c1;
+            --footer-bg: #38b6ff;
+            --footer-text: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .emergency-alert {
+            background-color: var(--emergency-red);
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .emergency-alert a {
+            color: white;
+            text-decoration: underline;
+            margin-left: 10px;
+        }
+        
+        .alert-bar {
+            background-color: var(--alert-bar);
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 0.85rem;
+        }
+        
+        .alert-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .alert-item {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+        }
+        
+        .alert-item i {
+            margin-right: 8px;
+            color: var(--primary-color);
+        }
+        
+        .alert-disease {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+        
+        .disease-name {
+            margin-right: 5px;
+        }
+        
+        .disease-percentage {
+            font-weight: bold;
+            margin-left: 3px;
+        }
+        
+        .disease-level {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-left: 5px;
+        }
+        
+        .level-low {
+            background-color: #28a745;
+        }
+        
+        .level-medium {
+            background-color: #ffc107;
+        }
+        
+        .level-high {
+            background-color: var(--emergency-red);
+        }
+        
+        .alert-news {
+            display: inline-block;
+            padding: 0 10px;
+            position: relative;
+        }
+        
+        .alert-news a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        
+        .alert-news a:hover {
+            text-decoration: underline;
+            color: var(--primary-color);
+        }
+        
+        .alert-news:not(:last-child)::after {
+            content: "|";
+            position: absolute;
+            right: -5px;
+            color: #ddd;
+        }
+        
+        .uv-index {
+            display: inline-flex;
+            align-items: center;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+        
+        .uv-low {
+            background-color: var(--uv-low);
+            color: white;
+        }
+        
+        .uv-moderate {
+            background-color: var(--uv-moderate);
+        }
+        
+        .uv-high {
+            background-color: var(--uv-high);
+            color: white;
+        }
+        
+        .uv-very-high {
+            background-color: var(--uv-very-high);
+            color: white;
+        }
+        
+        .uv-extreme {
+            background-color: var(--uv-extreme);
+            color: white;
+        }
+        
+        header {
+            background-color: var(--bg-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            width: 96%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .logo-text p {
+            font-style: italic;
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        nav ul li a i {
+            margin-right: 5px;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 10px 0;
+            min-width: 220px;
+            display: none;
+            z-index: 10;
+        }
+        
+        nav ul li:hover .dropdown-menu {
+            display: block;
+        }
+        
+        .dropdown-menu li {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .dropdown-menu li a {
+            padding: 8px 15px;
+            font-weight: 400;
+            color: var(--text-color);
+            white-space: nowrap;
+        }
+        
+        .dropdown-menu li a:hover {
+            color: var(--primary-color);
+            background-color: #f8f9fa;
+        }
+        
+        .subdropdown-menu {
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 0 5px 5px 5px;
+            padding: 10px 0;
+            min-width: 220px;
+            display: none;
+        }
+        
+        .dropdown-menu li:hover .subdropdown-menu {
+            display: block;
+        }
+        
+        .donate-menu {
+            background-color: #ff4757;
+            color: white;
+            border-radius: 30px;
+            padding: 8px 15px;
+            margin-left: 15px;
+        }
+        
+        .donate-menu a {
+            color: white !important;
+        }
+        
+        .donate-menu:hover {
+            background-color: #e84118;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+        
+        .login-section {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .login-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .login-container h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .login-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .login-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .login-form button:hover {
+            background-color: #2a8fd6;
+        }
+        
+        .login-links {
+            margin-top: 15px;
+        }
+        
+        .login-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        
+        .login-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .news-feeds {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .feeds-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .feed-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feed-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feed-card h3 i {
+            margin-right: 10px;
+        }
+        
+        .feed-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .feed-item:last-child {
+            border-bottom: none;
+        }
+        
+        .feed-item a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .feed-item a:hover {
+            color: var(--primary-color);
+        }
+        
+        .feed-date {
+            font-size: 0.8rem;
+            color: var(--light-text);
+            margin-top: 3px;
+        }
+        
+        .carousel-section {
+            padding: 60px 0;
+        }
+        
+        .swiper {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .swiper-slide {
+            position: relative;
+        }
+        
+        .swiper-slide img, .swiper-slide iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+        }
+        
+        .slide-content h3 {
+            margin-bottom: 10px;
+        }
+        
+        .swiper-button-next, .swiper-button-prev {
+            color: white !important;
+            background: rgba(0, 0, 0, 0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .swiper-button-next::after, .swiper-button-prev::after {
+            font-size: 1.2rem !important;
+        }
+        
+        .swiper-pagination-bullet {
+            background: white !important;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--text-color);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #2a8fd6;
+        }
+        
+        .services {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            background-color: var(--bg-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        .about {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .about-container {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .about-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .about-content p {
+            margin-bottom: 20px;
+        }
+        
+        footer {
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--footer-text);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: var(--footer-text);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-col ul li a:hover {
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            color: var(--footer-bg);
+            background-color: var(--footer-text);
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            color: var(--footer-text);
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 1200px) {
+            nav ul li {
+                margin-left: 15px;
+            }
+            
+            .dropdown-menu {
+                min-width: 200px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .alert-container {
+                justify-content: center;
+            }
+            
+            .alert-item {
+                margin: 5px 10px;
+            }
+            
+            nav ul li {
+                margin-left: 10px;
+            }
+            
+            .donate-menu {
+                margin-left: 10px;
+                padding: 6px 12px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo-container {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+                width: 100%;
+            }
+            
+            .dropdown-menu, .subdropdown-menu {
+                position: static;
+                box-shadow: none;
+                display: none;
+                width: 100%;
+                padding-left: 20px;
+            }
+            
+            .dropdown-menu li a, .subdropdown-menu li a {
+                padding: 8px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            nav {
+                display: none;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            .donate-menu {
+                display: none;
+            }
+            
+            .mobile-donate {
+                display: block !important;
+                margin: 15px auto 0;
+                width: fit-content;
+            }
+            
+            .hero {
+                height: auto;
+                padding: 100px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .alert-item {
+                font-size: 0.8rem;
+            }
+            
+            .alert-disease {
+                margin-right: 5px;
+            }
+            
+            .swiper {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .alert-item {
+                margin: 3px 5px;
+            }
+            
+            .alert-item i {
+                display: none;
+            }
+            
+            .disease-percentage {
+                display: none;
+            }
+            
+            .uv-index {
+                padding: 2px 5px;
+                font-size: 0.8rem;
+            }
+            
+            .feeds-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .swiper {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Alerta de emergencia -->
+    <div class="emergency-alert">
+        <div class="container">
+            <span><i class="fas fa-exclamation-triangle"></i> ALERTA: Aumento de casos de influenza en la región</span>
+            <a href="https://www.paho.org/es/documentos/alerta-epidemiologica-influenza-estacional-otros-virus-respiratorios-hemisferio-sur-17">Más información</a>
+        </div>
+    </div>
+    
+    <!-- Banda de noticias superior -->
+    <div class="alert-bar">
+        <div class="container alert-container">
+            <div class="alert-item">
+                <i class="fas fa-clock"></i>
+                <span id="current-time"></span>
+            </div>
+            <div class="alert-item">
+                <i class="fas fa-sun"></i>
+                <span>Índice UV: </span>
+                <span id="uv-value" class="uv-index uv-moderate">5</span>
+            </div>
+            <div class="alert-item">
+                <i class="fas fa-virus"></i>
+                <span class="alert-disease">
+                    <span class="disease-name">Influenza</span>
+                    <span class="disease-percentage">(+12%)</span>
+                    <span class="disease-level level-high"></span>
+                </span>
+                <span class="alert-disease">
+                    <span class="disease-name">COVID-19</span>
+                    <span class="disease-percentage">(+3%)</span>
+                    <span class="disease-level level-medium"></span>
+                </span>
+                <span class="alert-disease">
+                    <span class="disease-name">Dengue</span>
+                    <span class="disease-percentage">(-2%)</span>
+                    <span class="disease-level level-low"></span>
+                </span>
+            </div>
+            <div class="alert-item">
+                <i class="fas fa-bullhorn"></i>
+                <div>
+                    <span class="alert-news"><a href="https://wa.me/584127656134?text=Terapia%20Reiki">Terapia Reiki los martes a las 10:00 AM</a></span>
+                    <span class="alert-news"><a href="https://wa.me/584127656134?text=Clínica%20de%20la%20felicidad">Clínica de la felicidad los miércoles a las 10:00 AM</a></span>
+                    <span class="alert-news"><a href="https://wa.me/584127656134?text=Terapia%20Qigong">Terapia Qigong los jueves a las 10:00 AM</a></span>
+                    <span class="alert-news"><a href="https://wa.me/584127656134?text=Clínica%20de%20la%20longevidad">Clínica de la longevidad los jueves a las 10:00 AM</a></span>
+                    <span class="alert-news"><a href="https://wa.me/584127656134?text=Estudio%20clínico%20sobre%20la%20felicidad">Estudio clínico sobre la felicidad</a></span>
+                    <span class="alert-news"><a href="https://wa.me/584127656134?text=Estudio%20clínico%20sobre%20la%20longevidad">Estudio clínico sobre la longevidad</a></span>
+                    <span class="alert-news"><a href="https://wa.me/584127656134?text=Estudio%20Clínico%20Terápias%20Alternativas">Estudio clínico sobre las terapias alternativas</a></span>
+                    <span class="alert-news"><a href="https://wa.me/584127656134?text=Rotary%20Talk%20|%20La%20ciencia%20de%20cuidar">La ciencia de cuidar | Rotary talk</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <div class="logo">⚕</div>
+                <div class="logo-text">
+                    <h1>CH | Cuidado Humano</h1>
+                    <p><i> Servicio, Integridad & Perseverancia</i></p>
+                </div>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#atención"><i class="fas fa-user-md"></i> Atención</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://wa.me/584127656134?text=Información"><i class="fas fa-headset"></i> Información</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Pedir%20cita"><i class="fas fa-calendar-check"></i> Pedir cita</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Encontrar%20un%20médico"><i class="fas fa-user-md"></i> Encontrar un médico</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Solicitar%20un%20servicio"><i class="fas fa-procedures"></i> Solicitar un servicio</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Grupos%20de%20apoyo"><i class="fas fa-hands-helping"></i> Grupos de apoyo</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Visita%20domiciliaria"><i class="fas fa-map-marked-alt"></i> Visita domiciliaria</a></li>
+                            <li>
+                                <a href="#departamentos"><i class="fas fa-building"></i> Departamentos<i class="fas fa-chevron-right" style="margin-left: auto;"></i></a>
+                                <ul class="subdropdown-menu">
+                                    <li><a href="https://wa.me/584127656134?text=Ciencia%20de%20la%20felicidad">Ciencia de la felicidad</a></li>
+                                    <li><a href="https://wa.me/584127656134?text=CTDI">CTDI</a></li>
+                                    <li><a href="https://wa.me/584127656134?text=Enfermería">Enfermería</a></li>
+                                    <li><a href="https://wa.me/584127656134?text=Neurociencia">Neurociencia</a></li>
+                                    <li><a href="https://wa.me/584127656134?text=Medicina%20ocupacional">Medicina ocupacional</a></li>
+                                    <li><a href="https://wa.me/584127656134?text=Medicina%20tradicional">Medicina tradicional</a></li>
+                                    <li><a href="https://wa.me/584127656134?text=Publicaciones">Publicaciones</a></li>
+                                    <li><a href="https://wa.me/584127656134?text=Talento%20humano">Talento humano</a></li>
+                                    <li><a href="https://wa.me/584127656134?text=Terapia%20y%20rehabilitación">Terapia y rehabilitación</a></li>
+                                    <li><a href="https://wa.me/584127656134?text=Administración">Administración</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="https://wa.me/584127656134?text=Facturacion"><i class="fas fa-file-invoice-dollar"></i> Facturación</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Sobre%20CH"><i class="fas fa-info-circle"></i> Sobre CH</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+    <a href="#campus"><i class="fas fa-book"></i> Campus</a>
+    <ul class="dropdown-menu">
+        <li>
+            <a href="#cursos"><i class="fas fa-graduation-cap"></i> Cursos<i class="fas fa-chevron-right" style="margin-left: auto;"></i></a>
+            <ul class="subdropdown-menu">	
+				<li><a href="https://wa.me/584127656134?text=Defensa%20personal">Defensa personal</a></li>
+				<li><a href="https://wa.me/584127656134?text=R">Lenguaje R</a></li>
+                <li><a href="https://wa.me/584127656134?text=Filosofía%20del%20cuidado">Filosofía del cuidado</a></li>
+                <li><a href="https://wa.me/584127656134?text=Git">Control de versiones con Git</a></li>
+                <li><a href="https://wa.me/584127656134?text=Guix">Gestión de paquetes con GUIX</a></li>
+                <li><a href="https://wa.me/584127656134?text=Inglés">Inglés</a></li>                
+                <li><a href="https://wa.me/584127656134?text=La%20salud%20y%20el%20trabajo">La salud y el trabajo</a></li>
+                <li><a href="https://wa.me/584127656134?text=LaTeX">LaTeX</a></li>
+                <li><a href="https://wa.me/584127656134?text=Desarrollo%20en%20NeuroFedora">Desarrollo en NeuroFedora</a></li>
+                <li><a href="https://wa.me/584127656134?text=Neuroética">Neuroética</a></li>
+                <li><a href="https://wa.me/584127656134?text=La%20ciencia%20filosofía%20y%20método">La ciencia: filosofía y método</a></li>                
+                <li><a href="https://wa.me/584127656134?text=Primeros%20auxilios">Primeros auxilios</a></li>
+                <li><a href="https://wa.me/584127656134?text=Programacion%20con%20Racket">Programación con Racket</a></li>
+                <li><a href="https://wa.me/584127656134?text=Supervivencia">Supervivencia</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#biblioteca"><i class="fas fa-book-open"></i> Biblioteca<i class="fas fa-chevron-right" style="margin-left: auto;"></i></a>
+            <ul class="subdropdown-menu">
+                <li><a href="https://wa.me/584127656134?text=Archivo">Archivo</a></li>
+                <li><a href="https://wa.me/584127656134?text=Análisis%20y%20procedimientos">Análisis y procedimientos</a></li>
+                <li><a href="https://wa.me/584127656134?text=Bioestadistica">Bioestadística</a></li>
+                <li><a href="https://wa.me/584127656134?text=Enfermedades">Enfermedades</a></li>
+                <li><a href="https://wa.me/584127656134?text=Estilo%20de%20vida">Estilo de vida</a></li>
+                <li><a href="https://wa.me/584127656134?text=Publicaciones">Publicaciones</a></li>
+                <li><a href="https://wa.me/584127656134?text=Vademecum">Vademécum</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
+
+                    
+                    <li>
+                        <a href="#profesionales"><i class="fas fa-user-tie"></i> Profesionales</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://wa.me/584127656134?text=Educacion"><i class="fas fa-graduation-cap"></i> Educación</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Encontrar%20experto"><i class="fas fa-comments"></i> Encontrar experto</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Encontrar%20rabajo"><i class="fas fa-briefcase"></i> Encontrar trabajo</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Laboratorio"><i class="fas fa-flask"></i> Laboratorio</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Multimedia"><i class="fas fa-photo-video"></i> Multimedia</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Publicaciones"><i class="fas fa-book"></i> Publicaciones</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Recursos"><i class="fas fa-tools"></i> Recursos</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Remitir%20un%20paciente"><i class="fas fa-exchange-alt"></i> Remitir un paciente</a></li>                                                
+                            <li><a href="https://wa.me/584127656134?text=Voluntariado"><i class="fas fa-hands-helping"></i> Voluntariado</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <a href="#investigación"><i class="fas fa-microscope"></i> Investigación</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://wa.me/584127656134?text=CTDI"><i class="fas fa-atom"></i> CTDI</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Datos"><i class="fas fa-database"></i> Datos</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Departamento"><i class="fas fa-building"></i> Departamento</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Ensayos%20clínicos"><i class="fas fa-clipboard-check"></i> Ensayos clínicos</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Junta%20CTDI"><i class="fas fa-users"></i> Junta CTDI</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Laboratorio"><i class="fas fa-vial"></i> Laboratorio</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Líneas%20de%20investigación"><i class="fas fa-route"></i> Líneas de investigación</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Publicaciones"><i class="fas fa-lightbulb"></i> Publicaciones</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Profesores"><i class="fas fa-chalkboard-teacher"></i> Profesores</a></li>
+                            <li><a href="https://wa.me/584127656134?text=Programas"><i class="fas fa-project-diagram"></i> Programas</a></li>                            
+                            <li><a href="https://wa.me/584127656134?text=Subvenciones"><i class="fas fa-money-bill-wave"></i> Subvenciones</a></li>                                                                                
+                        </ul>
+                    </li>
+                    
+                    <li class="donate-menu">
+                        <a href="https://paypal.me/juanlezamaofficial"><i class="fas fa-heart"></i> Donaciones</a>
+                    </li>
+                </ul>
+                <a href="#donar" class="donate-btn mobile-donate" style="display: none;"><i class="fas fa-heart"></i> Donar</a>
+            </nav>
+        </div>
+    </header>
+
+                    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Últimas Noticias - Cuidado Humano 247</title>
+    <style>
+        .feed-card {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1230px;
+            margin: 20px auto;
+            padding: 25px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .feed-header {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 0px;
+            border-bottom: 2px solid #f1f1f1;
+        }
+        
+        .news-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #e0e0e0;
+            transition: all 0.3s ease;
+        }
+        
+        .news-item:hover {
+            transform: translateY(-3px);
+        }
+        
+        .news-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .news-title {
+            color: #2980b9;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .news-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .news-title a:hover {
+            color: #3498db;
+            text-decoration: underline;
+        }
+        
+        .news-excerpt {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85em;
+            color: #7f8c8d;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            text-align: center;
+            padding: 20px;
+            background: #fde8e8;
+            border-radius: 5px;
+        }
+        
+        @media (max-width: 600px) {
+            .feed-card {
+                padding: 15px;
+                margin: 10px;
+            }
+            
+            .news-meta {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="feed-card">
+        <h2 class="feed-header">      </h2>
+        <div id="blog-posts-container">
+            <div class="loading">Cargando artículos recientes...</div>
+        </div>
+    </div>
+
+    <script>
+        // Función para cargar el feed RSS
+        function loadRSSFeed() {
+            const container = document.getElementById('blog-posts-container');
+            
+            // URL de tu feed RSS de Blogger
+            const rssFeedUrl = 'https://cuidadohumano247.blogspot.com/feeds/posts/default?alt=rss';
+            
+            // Usamos el servicio de Google Feed API (requiere internet)
+            const googleFeedApiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssFeedUrl)}`;
+            
+            fetch(googleFeedApiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('No se pudo cargar el feed');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.status !== 'ok') {
+                        throw new Error('Formato de feed incorrecto');
+                    }
+                    
+                    container.innerHTML = '';
+                    
+                    // Mostrar los primeros 5 posts (puedes ajustar este número)
+                    const postsToShow = data.items.slice(0, 3);
+                    
+                    if (postsToShow.length === 0) {
+                        container.innerHTML = '<div class="error-message">No hay publicaciones recientes.</div>';
+                        return;
+                    }
+                    
+                    postsToShow.forEach(post => {
+                        const postElement = document.createElement('div');
+                        postElement.className = 'news-item';
+                        
+                        // Formatear la fecha
+                        const postDate = new Date(post.pubDate);
+                        const formattedDate = postDate.toLocaleDateString('es-ES', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+                        
+                        // Crear extracto (eliminar etiquetas HTML)
+                        const excerpt = post.description.replace(/<[^>]*>/g, '').substring(0, 200) + '...';
+                        
+                        postElement.innerHTML = `
+                            <h3 class="news-title"><a href="${post.link}" target="_blank">${post.title}</a></h3>
+                            <div class="news-excerpt">${excerpt}</div>
+                            <div class="news-meta">
+                                <span>Publicado el ${formattedDate}</span>
+                                <a href="${post.link}" target="_blank">Leer más →</a>
+                            </div>
+                        `;
+                        
+                        container.appendChild(postElement);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error al cargar el feed RSS:', error);
+                    container.innerHTML = `
+                        <div class="error-message">
+                            <p>No se pudieron cargar las publicaciones recientes.</p>
+                            <p>Visita nuestro <a href="https://cuidadohumano247.blogspot.com/" target="_blank">blog</a> directamente.</p>
+                        </div>
+                    `;
+                });
+        }
+        
+        // Cargar el feed cuando la página esté lista
+        document.addEventListener('DOMContentLoaded', loadRSSFeed);
+    </script>
+</body>
+</html>
+
+
+    
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>CH | Cuidado Humano</h3>
+                    <p><i>Servicio, Integridad & Perseverancia</i></p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/cuidado.humano.2025/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>                        
+                        <a href="https://www.instagram.com/cuidadohumanooficial/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://cuidadohumano247.blogspot.com/" aria-label="Blogger"><i class="fab fa-blogger-b"></i></a>                        
+                        <a href="https://www.linkedin.com/in/juanlezama" aria-label="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://f-jals.github.io/proyecto" aria-label="heart"><i class="fas fa-heart"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="https://wa.me/584127656134?text=Consulta">Consulta</a></li>
+                        <li><a href="https://wa.me/584127656134?text=Pedir%20cita">Pedir cita</a></li>
+                        <li><a href="https://wa.me/584127656134?text=Visita%20domiciliaria">Visita domiciliaria</a></li>
+                        <li><a href="https://wa.me/584127656134?text=Toma%20de%20muestras">Toma de muestras</a></li>
+                        <li><a href="https://wa.me/584127656134?text=Terapia%20y%20rehabilitación">Terapia y rehabilitación</a></li>                        
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Enlace</h3>
+                    <ul>
+                        <li><a href="https://wa.me/584127656134?text=Atencion">Atención</a></li>
+                        <li><a href="https://wa.me/584127656134?text=Campus">Campus</a></li>
+                        <li><a href="https://wa.me/584127656134?text=Profesionales">Profesionales</a></li>
+                        <li><a href="https://wa.me/584127656134?text=Investigación">Investigación</a></li>
+                        <li><a href="https://paypal.me/juanlezamaofficial">Donaciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i><a href="https://meet.google.com/fwx-cnat-xfm"> Oficina Virtual</a></li>
+                        <li><i class="fas fa-phone"></i><a href="tel:+584127656134"> +584127656134</a></li>
+                        <li><i class="fas fa-envelope"></i><a href="mailto:licdo.juanlezama@gmail.com"> licdo.juanlezama@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> 24/7</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="year"></span> ⚕ CH | Cuidado Humano. Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        // Año actual para el copyright
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Menú móvil
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const nav = document.querySelector('nav');
+        
+        mobileMenu.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+        
+        // Cerrar menú al hacer clic en un enlace
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    const dropdown = link.parentElement.querySelector('.dropdown-menu');
+                    if (dropdown) {
+                        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+                    } else {
+                        nav.classList.remove('active');
+                    }
+                }
+            });
+        });
+        
+        // Hora actual
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+            document.getElementById('current-time').textContent = timeString;
+        }
+        
+        setInterval(updateTime, 1000);
+        updateTime();
+        
+        // Rotador de noticias
+        let currentNews = 0;
+        const newsItems = document.querySelectorAll('.alert-news');
+        
+        function rotateNews() {
+            newsItems.forEach(item => item.style.display = 'none');
+            newsItems[currentNews].style.display = 'inline-block';
+            currentNews = (currentNews + 1) % newsItems.length;
+        }
+        
+        // Rotar cada 5 segundos
+        setInterval(rotateNews, 5000);
+        rotateNews(); // Mostrar la primera noticia inmediatamente
+        
+        // Índice UV local (simulado)
+        function updateUVIndex() {
+            // En un entorno real, esto se obtendría de una API del clima
+            // Simulamos variaciones a lo largo del día
+            const now = new Date();
+            const hour = now.getHours();
+            
+            // Valores típicos de UV durante el día
+            let uvValue, uvClass;
+            
+            if (hour < 6 || hour >= 18) {
+                uvValue = 0;
+                uvClass = 'uv-low';
+            } else if (hour < 9) {
+                uvValue = 3;
+                uvClass = 'uv-moderate';
+            } else if (hour < 12) {
+                uvValue = 6;
+                uvClass = 'uv-high';
+            } else if (hour < 15) {
+                uvValue = 9;
+                uvClass = 'uv-very-high';
+            } else if (hour < 17) {
+                uvValue = 7;
+                uvClass = 'uv-high';
+            } else {
+                uvValue = 4;
+                uvClass = 'uv-moderate';
+            }
+            
+            const uvElement = document.getElementById('uv-value');
+            uvElement.textContent = uvValue;
+            uvElement.className = 'uv-index ' + uvClass;
+        }
+        
+        // Actualizar cada hora
+        updateUVIndex();
+        setInterval(updateUVIndex, 3600000);
+        
+        // Mostrar/ocultar submenús en móvil
+        const dropdownToggles = document.querySelectorAll('.dropdown-menu > li > a i.fa-chevron-right');
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const submenu = this.parentElement.nextElementSibling;
+                    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+                }
+            });
+        });
+        
+        // Carrusel con Swiper
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+</html>
