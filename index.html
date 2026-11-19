@@ -2259,7 +2259,7 @@
 
         function loadRSSFeed() {
             const feedScript = document.createElement('script');
-            feedScript.src = 'https://cuidadohumano247.blogspot.com/feeds/posts/default?alt=json-in-script&callback=renderBlogPosts&max-results=3';
+            feedScript.src = 'https://blog.cuidadohumano.org/feeds/posts/default?alt=json-in-script&callback=renderBlogPosts&max-results=3';
             feedScript.onerror = showBlogFallback;
             document.body.appendChild(feedScript);
         }
